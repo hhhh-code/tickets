@@ -52,5 +52,10 @@ class conexion
         return $this->conexion->query($query);
     }
 
+    function Delete(int $id): bool {
+        $query = "DELETE FROM ticket WHERE id = {$id}";
+        return $this->conexion->query($query);
+    }
+
 }
 

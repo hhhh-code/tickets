@@ -45,6 +45,10 @@
                             <div class="card-body">
                                 <h4 class="card-title"><?php echo $value->id ?></h4>
                                 <p class="card-text ticket-description"><?php echo $value->descripcion ?></p>
+                                <form action="EliminarTicket.php" method="post">
+                                    <input type="text" hidden value="<?php echo $value->id ?>" name="id">
+                                    <button class="btn btn-danger">Eliminar</button>
+                                </form>
                             </div>
                         </div>
                     <?php } ?>

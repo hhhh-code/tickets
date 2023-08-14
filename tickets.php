@@ -21,6 +21,9 @@ final class Tickets
         return $this->conexion->Query($query);
     }
 
+    function DeleteTicket(int $id) : bool {
+        return $this->conexion->Delete($id);
+    }
 
 }
 

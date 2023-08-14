@@ -5,5 +5,6 @@
 
 .ticket-description{
     max-height: 120px;
+    min-height: 60px;
     overflow-y: auto;
 }
