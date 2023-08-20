@@ -49,6 +49,10 @@
                                     <input type="text" hidden value="<?php echo $value->id ?>" name="id">
                                     <button class="btn btn-danger">Eliminar</button>
                                 </form>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" onclick="editar(`<?php echo $value->id ?>`,`<?php echo $value->descripcion ?>`)" data-bs-target="#staticBackdrop">
+                                    Editar
+                                </button>
                             </div>
                         </div>
                     <?php } ?>
@@ -57,6 +61,32 @@
         </div>
     </div>
 
+
+
+    <!-- Modal -->
+    <form action="Editar.php" method="post">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Editar Ticket</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="id" class="form-contol" hidden>
+                        <input type="text" name="descripcion" class="form-contol">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="index.js"></script>
 
 </body>
 

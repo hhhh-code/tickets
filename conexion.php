@@ -57,5 +57,9 @@ class conexion
         return $this->conexion->query($query);
     }
 
+    function Update(string $query) : bool {
+        return $this->conexion->query($query);
+    }
+
 }
 

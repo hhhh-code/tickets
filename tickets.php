@@ -25,5 +25,10 @@ final class Tickets
         return $this->conexion->Delete($id);
     }
 
+    function Update($id, $descripcion){
+        $query = "UPDATE ticket SET descripcion = '{$descripcion}' WHERE id = {$id}";
+        return $this->conexion->Update($query);
+    }
+
 }
 
