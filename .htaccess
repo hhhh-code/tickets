@@ -1,0 +1,9 @@
+RewriteEngine On
+Options -Indexes
+
+# Regla 3: Redirigir todas las demás rutas a index.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+
+

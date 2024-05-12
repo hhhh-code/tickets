@@ -1,0 +1,10 @@
+.ticket{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ticket-description{
+    max-height: 120px;
+    min-height: 60px;
+    overflow-y: auto;
+}
