@@ -73,15 +73,15 @@
                     <?php foreach ($reusults as $key => $value) {  ?>
                         <div class="card text-start mt-1">
                             <div class="card-body">
-                                <h4 class="card-title"><?php echo htmlspecialchars($value->id) ?></h4>
+                                <h4 class="card-title"><?php echo htmlspecialchars($value->ticketId) ?></h4>
                                 <label class="btn-warning"><?php echo htmlspecialchars($value->name) ?></label>
                                 <p class="card-text ticket-description"><?php echo htmlspecialchars($value->descripcion) ?></p>
                                 <form action="/Ticket/eliminarTicket" method="post">
-                                    <input type="text" hidden value="<?php echo htmlspecialchars($value->id) ?>" name="id">
+                                    <input type="text" hidden value="<?php echo htmlspecialchars($value->ticketId) ?>" name="id">
                                     <button class="btn btn-danger">Eliminar</button>
                                 </form>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" onclick="editar(`<?php echo htmlspecialchars($value->id) ?>`,`<?php echo htmlspecialchars($value->descripcion) ?>`)" data-bs-target="#staticBackdrop">
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" onclick="editar(`<?php echo htmlspecialchars($value->ticketId) ?>`,`<?php echo htmlspecialchars($value->descripcion) ?>`)" data-bs-target="#staticBackdrop">
                                     Editar
                                 </button>
                             </div>

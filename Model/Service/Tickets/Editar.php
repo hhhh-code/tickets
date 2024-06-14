@@ -14,5 +14,4 @@ final class Editar
     public function handle($info): void {
         $this->ticket->Update($info["id"], $info["descripcion"]);
     }
-
 }

@@ -73,4 +73,31 @@ class conexion
     {
         return $this->conexion->query($query);
     }
+
+    function ExecuteStoredProc(string $procName, array $params): mixed
+    {
+        $paramString = implode(',', array_fill(0, count($params), '?'));
+        $query = "CALL {$procName}({$paramString})";
+        $stm = $this->conexion->prepare($query);
+
+        if (!$stm) {
+            die("Error preparando la consulta: " . $this->conexion->error);
+        }
+
+        if (count($params) > 0) {
+            $stm->bind_param(str_repeat('s', count($params)), ...$params);
+        }
+        $stm->execute();
+        $result = $stm->get_result();
+
+        $data = [];
+        while ($row = $result->fetch_object()) {
+            $data[] = $row;
+        }
+
+        $stm->close();
+        return $data;
+    }
+
+
 }

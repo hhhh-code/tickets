@@ -18,7 +18,7 @@ final class TicketsRepository
 
 
     function getTickets() : mixed {
-        $query = "SELECT *,TICKET.id  FROM ticket AS TICKET INNER JOIN user AS USER ON USER.id = TICKET.id_usuario"; 
+        $query = "SELECT * FROM userticketview"; 
         return $this->conexion->Query($query);
     }
 
